@@ -1,43 +1,30 @@
 function [continuando, sala, usuario] = menuReservar(sala,usuario)
 %menuReservar Muestra el menú al usuario y recibe la opción a realizar.
-%
 % menuReservar(usuario, asiento, sala) no retorna ningún valor, pero
 % recibe como parámetros:
-%
 %    usuario -> lista -> Guarda la info del usuario que realiza una/s reservas.
 %    asiento -> lista -> Guarda los asientos disponibles.
 %    sala -> lista -> Guarda cada una de las salas.
 
-%% Mostrar Menú:
-%clc;
-imprimirMenuReservar()
-
 while true
+    imprimirMenuReservar()
     opcion = input('\nIngrese la opción que desea realizar:\n', 's');
     switch opcion
         case '1'
             numSala = 1;
-            % [usuario, sala] = reservarEnSala(numSala + todos esos argumentos de abajo);
-
-%             numeroSala = elegirSala(); %NO FINALIZADO
-%             asientoElegido = visualizarElegirAsiento(sala, numeroSala, asiento); % NO FINALIZADO
-%             usuarioAsignadoConAsiento = asignarAsientoAUsuario(usuario,asientoElegido, sala); % NO FIN
-%             fprintf('%', usuarioAsignadoConAsiento); % NO FINALIZADO
-            
-            [usuario, idUsuario] = buscarUsuario(usuario); %si el usuario esta devolver el usuario e idUsuario, si no está, agregarlo y luego devolver el idUsuario.
-            imprimirMatrizSala(sala,numSala);
-            [fila, columna] = solicitarFilaColumna(); % se solicita la fila y columna que quiere reservar
-            [sala, usuario] = reservarAsientoPorFilaColumna(sala,numSala,fila,columna,usuario,idUsuario);
-            imprimirMatrizSala(sala,numSala);
-
+            [sala, usuario] = reservar(usuario,sala, numSala);
         case '2'
-            %
+            numSala = 2;
+            [sala, usuario] = reservar(usuario,sala, numSala);
         case '3'
-            %        
+            numSala = 3;
+            [sala, usuario] = reservar(usuario,sala, numSala);
         case '4'
-            %        
+            numSala = 4;
+            [sala, usuario] = reservar(usuario,sala, numSala);
         case '5'
-            %
+            numSala = 5;
+            [sala, usuario] = reservar(usuario,sala, numSala);
         case '6'
             continuando = true;
             return
