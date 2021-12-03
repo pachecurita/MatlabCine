@@ -8,6 +8,7 @@ continuando = true;
 while true
     if ~ continuando %Exit
         disp('Fue un gusto tenerte por aquí. Vuelve pronto.');
+        
         break
     end
 
@@ -27,7 +28,7 @@ while true
         case '1'
             [continuando, sala, usuario] = reservar(sala,usuario);
         case '2'
-            %[continuando, sala, usuario] = verReservas(sala,usuario);
+            [continuando, sala] = verReservas(sala);
         case '3'
             %[continuando, sala, usuario] = modificarReservas(sala,usuario);
         case '4'

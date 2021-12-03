@@ -1,8 +1,9 @@
 function imprimirSala(sala, numSala)
 % Imprime los asientos disponibles en la sala especificada.
 
-fprintf(['\n       <strong>--------------------------------|      PANTALLA DEL CINE      | ' ...
-         '--------------------------------</strong>\n     '])
+fprintf(['\n       <strong>--------------------------------' ...
+         '| PANTALLA DEL CINE - SALA %d| ' ...
+         '--------------------------------</strong>\n     '], numSala)
 
 for x=1:size(sala(numSala).asientos,2)
     if x < 10

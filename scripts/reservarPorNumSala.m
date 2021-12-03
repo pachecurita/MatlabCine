@@ -16,5 +16,4 @@ columna = validarFilaColumna(20);
 imprimirSala(sala,numSala);
 
 
-
 %% PENDIENTE REVISAR!!! ATT
