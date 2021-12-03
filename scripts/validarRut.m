@@ -7,23 +7,46 @@ function rut = validarRut()
 % Retorna el rut validado del usuario.
 %       Ejemplo de uso:
 %       >>> rut = validarRut();
+% FUNCIÓN TERMINADA !!! --------->>>>>> BORRAR ESTO DSP
 
 cero = '0';
 
 continuar = true;
-while continuar %Aqui hay un error que debo corregir: PENDIENTE!
-    % Cuando ingreso caracteres alfanumericos tira error.
+while continuar %Aqui hay un error: PENDIENTE! Actualización:CORREGIDO!
+    % Cuando ingreso caracteres alfa tira error.
+
     rutConDigito = upper(input('Ingrese su rut sin puntos ni guión: ', 's'));
-    if length(rutConDigito) == 8
+    
+    for i=1:(length(rutConDigito)-1)
+        if isstrprop(rutConDigito(i),"alpha") ~=1
+            esAlfa = false;
+            
+        else
+            esAlfa = true;
+            break
+        end
+    end
+
+    if rutConDigito(length(rutConDigito)) == 'K' || ...
+       isstrprop(rutConDigito(length(rutConDigito)),"digit") == 1
+        esAlfa = false;
+    else
+        esAlfa = true;
+    end
+
+
+    if length(rutConDigito) == 8 && esAlfa == false
         rutConDigitoLargo9 = strcat(cero,rutConDigito);
         continuar = false;
-    elseif length(rutConDigito) == 9
+    elseif length(rutConDigito) == 9 && esAlfa == false
         rutConDigitoLargo9 = rutConDigito;
         continuar = false;
     else
         continuar = true;
     end
 end
+
+
 
 rutSinDigito = rutConDigitoLargo9(1:8);
 
