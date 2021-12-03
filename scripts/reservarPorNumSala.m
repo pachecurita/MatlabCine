@@ -10,7 +10,7 @@ fprintf('Ingrese la columna del asiento que desea reservar: \n');
 columna = validarFilaColumna(20);
 
 %% Se realiza la reserva por fila y columna seleccionada
-[sala, usuario] = reservarAsientoPorFilaColumna(sala,numSala,fila,columna, ...
+[sala, usuario] = reservarPorFilaColumna(sala,numSala,fila,columna, ...
                                                 usuario,idUsuario);
 %% Se imprime la matriz una vez hecha la reserva.
 imprimirSala(sala,numSala);
