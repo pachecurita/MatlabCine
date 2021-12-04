@@ -31,6 +31,7 @@ for i=1:size((sala(numSala).asientos),1)
     end
 end
 
-fprintf(['\n\n']);
+fprintf('\nAsientos disponibles: %d\nAsientos ocupados: %d\n', ...
+          sala(numSala).asientosDisponibles, sala(numSala).asientosOcupados);
 
 %% FUNCIÓN TERMINADA!! Borrar dsp esto

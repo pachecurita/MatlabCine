@@ -16,11 +16,12 @@ for i=1:size(sala(numeroSala).asientos,1)
 
         elseif i == fila && j == columna && sala(numeroSala).asientos(i,j) == 1
             sala(numeroSala).asientos(i,j) = 0;
-            
-            
             %aqui guardar en usuario los asientos elegidos.ESTO FUNCIONA:
             usuario(idUsuario).reserva = [[usuario(idUsuario).reserva]; [numeroSala,fila,columna]];
             sala(numeroSala).recaudacion = sala(numeroSala).recaudacion + 7500;
+            sala(numeroSala).asientosDisponibles = sala(numeroSala).asientosDisponibles - 1;
+            sala(numeroSala).asientosOcupados = sala(numeroSala).asientosOcupados + 1;
+            
 
             fprintf('El asiento F%dC%d ha sido reservado exitosamente.', i,j);
             input('');
