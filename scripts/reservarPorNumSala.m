@@ -1,6 +1,6 @@
-function [sala, usuario] = reservarPorNumSala(usuario, sala, numSala)
+function [seguirReservando, sala, usuario] = reservarPorNumSala(usuario, idUsuario, sala, numSala)
 %% Se busca el ususario y luego se imprime la sala para ver asientos disp.
-[usuario, idUsuario] = buscarUsuario(usuario);
+%[usuario, idUsuario] = buscarUsuario(usuario);
 imprimirSala(sala,numSala);
 
 %% Se solicita la fila y columna que desea reservar:
@@ -17,3 +17,6 @@ imprimirSala(sala,numSala);
 
 
 %% PENDIENTE REVISAR!!! ATT
+
+fprintf('\nDesea reservar otra sala? S/N \n');
+seguirReservando = funcionSeguir();

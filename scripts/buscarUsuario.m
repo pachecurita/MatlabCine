@@ -2,6 +2,7 @@ function [usuario, idUsuario] = buscarUsuario(usuario)
 
 [rut,nombre,apellido] = preguntarDatosUsuario();
 
+% Pendiente hacer una mini validación de rut con nombre y apellido!
 
 seEncuentra = false;
 i = 1;

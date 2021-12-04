@@ -3,9 +3,18 @@ function [continuando, sala, usuario] = reservar(sala,usuario)
 % Recibe 2 parámetros:
 %    usuario -> Estructura con los datos de los usuarios.
 %    sala -> Estructura con la matriz que guarda los asientos disponibles.
+
 seguirReservando = true;
+[usuario, idUsuario] = buscarUsuario(usuario);
+
 while true
-    
+
+    if seguirReservando == false
+        continuando = true;
+        break
+
+    end
+
     fprintf(['<strong>|   MENU RESERVAR   |</strong>\n' ...
     '¿En qué sala le guardaría reservar? Elija el número de la sala:\n' ...
     '1. Reservar en SALA 1\n' ...
@@ -16,34 +25,28 @@ while true
     '6. Volver al MENÚ PRINCIPAL.\n' ...
     '7. Salir del programa.\n\n'])
 
-    if seguirReservando == false
-        continuando = true;
-        break
-    end
-
     opcion = input('\nIngrese la opción que desea realizar:\n', 's');
     switch opcion
         case '1'
             numSala = 1;
-            [sala, usuario] = reservarPorNumSala(usuario,sala, numSala);
-            % implementar la función seguirReservando() quizás dentro de la
-            % función de arriba para que así no tenga que pedir el nombre
-            % y rut a cada rato! PENDIENTE! (Para guiarme mirar la función
-            % verReservas(), ya que allí está más o menos implementado.
-            % PENDIENTE!!!!!!
-            
+            [seguirReservando, sala, usuario] = ...
+            reservarPorNumSala(usuario, idUsuario, sala, numSala);
         case '2'
             numSala = 2;
-            [sala, usuario] = reservarPorNumSala(usuario,sala, numSala);
+            [seguirReservando, sala, usuario] = ...
+            reservarPorNumSala(usuario, idUsuario, sala, numSala);
         case '3'
             numSala = 3;
-            [sala, usuario] = reservarPorNumSala(usuario,sala, numSala);
+            [seguirReservando, sala, usuario] = ...
+            reservarPorNumSala(usuario, idUsuario, sala, numSala);
         case '4'
             numSala = 4;
-            [sala, usuario] = reservarPorNumSala(usuario,sala, numSala);
+            [seguirReservando, sala, usuario] = ...
+            reservarPorNumSala(usuario, idUsuario, sala, numSala);
         case '5'
             numSala = 5;
-            [sala, usuario] = reservarPorNumSala(usuario,sala, numSala);
+            [seguirReservando, sala, usuario] = ...
+            reservarPorNumSala(usuario, idUsuario, sala, numSala);
         case '6'
             continuando = true;
             return
