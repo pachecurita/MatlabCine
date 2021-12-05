@@ -9,3 +9,5 @@ for i=1:size(matrizPrueba)
         fprintf('No se encuentra');
     end
 end
+
+%% NI IDEA SI ESTO SIRVE REALMENTE, DSP MIRARLO BIEN, CAPAZ ME DA UNA IDEA

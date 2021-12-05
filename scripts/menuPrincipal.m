@@ -33,7 +33,7 @@ while true
         case '3'
             %[continuando, sala, usuario] = modificarReservas(sala,usuario);
         case '4'
-            %[continuando, sala, usuario] = anularReservas(sala,usuario);
+            [continuando, sala, usuario] = anularReserva(sala,usuario);
         case '5'
             [continuando, sala] = recaudacion(sala);
         case '6'

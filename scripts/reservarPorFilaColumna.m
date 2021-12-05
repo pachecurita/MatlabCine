@@ -17,6 +17,8 @@ for i=1:size(sala(numeroSala).asientos,1)
             sala(numeroSala).recaudacion = sala(numeroSala).recaudacion + 7500;
             sala(numeroSala).asientosDisponibles = sala(numeroSala).asientosDisponibles - 1;
             sala(numeroSala).asientosOcupados = sala(numeroSala).asientosOcupados + 1;
+            numeroReserva = crearNumeroReserva(numeroSala, fila, columna, sala(numeroSala).asientosOcupados);%probando
+            usuario(idUsuario).numReservas = [usuario(idUsuario).numReservas, numeroReserva]; %probando
             
 
             fprintf('El asiento F%dC%d ha sido reservado exitosamente.', i,j);
