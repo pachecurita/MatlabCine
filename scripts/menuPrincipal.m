@@ -1,16 +1,16 @@
 function [sala, usuario] = menuPrincipal(sala,usuario)
 % Muestra el menú principal al usuario, espera una acción y la realiza.
-% menuPrincipal(usuario, asiento, sala) no retorna ningún valor, pero
-% recibe como parámetros:
+% Tiene como parámetros:
 %    usuario -> struct() -> Guarda la información de los usuarios.
-%    sala -> struct() -> Guarda la información de las 5 salas.
+%    sala -> struct() -> Guarda la información de c/u de las salas.
+% Retorna la información en variables de las salas y usuarios.
 continuando = true;
 while true
-    if ~ continuando %Exit
+    if ~ continuando
         disp('Fue un gusto tenerte por aquí. Vuelve pronto.');
-        
         break
     end
+
 
     fprintf(['' ...
     '<strong>|   MENU PRINCIPAL DEL CINE   |</strong>\n' ...
@@ -23,6 +23,7 @@ while true
     '6. Salir del programa.\n' ...
     ])
     
+
     opcion = input('\nIngrese el numero de la opción que desea realizar:\n', 's');
     switch opcion
         case '1'

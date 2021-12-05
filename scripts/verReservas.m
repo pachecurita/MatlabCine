@@ -14,7 +14,6 @@ while true
     '6. Volver al MENÚ PRINCIPAL.\n' ...
     '7. Salir del programa.\n\n'])
     
-
     if seguirViendo == false
         continuando = true;
         break

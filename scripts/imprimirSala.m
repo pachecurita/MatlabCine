@@ -27,11 +27,8 @@ for i=1:size((sala(numSala).asientos),1)
         elseif sala(numSala).asientos(i,j) == 0
             fprintf(2,' <strong>X</strong>   ');
         end
-        %fprintf(' %d ', (sala(numeroSala).asientos(i,j)));
     end
 end
 
 fprintf('\nAsientos disponibles: %d\nAsientos ocupados: %d\n', ...
           sala(numSala).asientosDisponibles, sala(numSala).asientosOcupados);
-
-%% FUNCIÓN TERMINADA!! Borrar dsp esto

@@ -12,9 +12,7 @@ while true
     if seguirReservando == false
         continuando = true;
         break
-
     end
-
 
     fprintf(['<strong>|   MENU RESERVAR   |</strong>\n' ...
     '<strong>¡Hola, %s %s!</strong> ¿En qué sala le guardaría reservar? ' ...

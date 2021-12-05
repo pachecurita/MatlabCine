@@ -18,5 +18,3 @@ else
     fprintf('No es un valor válido. Por favor vuelva a intentarlo:\n');
     valor = validarFilaColumna(maximo);
 end
-
-%% FUNCION TERMINADA! (Borrar al tener todo listo)
