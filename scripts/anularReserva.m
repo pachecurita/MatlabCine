@@ -22,7 +22,11 @@ while true
     opcion = input('\nIngrese la opción que desea realizar:\n', 's');
     switch opcion
         case '1'
-            % buscarPorRUT()
+            rut = validarRut();
+            [usuario, idUsuario] = buscarUsuarioPorRut(rut);
+            %numSala, numFila, numColumna = extraerDatosUsuario(usuario, idUsuario);
+            imprimirDatosUsuario(usuario, idUsuario, sala);
+            
             %[usuario, idUsuario] = buscarUsuario(usuario);
             % imprimirDatosUsuario(usuario,sala)
         case '2'
