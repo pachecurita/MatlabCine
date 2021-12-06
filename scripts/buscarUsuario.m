@@ -3,6 +3,8 @@ function [usuario, idUsuario] = buscarUsuario(usuario)
 % lo encuenta entonces va a agregarlo con un nuevo numero de ID y va a
 % terminar retornando ese numero de ID.
 
+% LE PODRÍA CAMBIAR EL NOMBRE QUIZÁS A "REGISTRAR USUARIO"
+
 rut = validarRut();
 seEncuentra = false;
 
