@@ -1,45 +1,41 @@
 function [continuando, sala, usuario] = anularReserva(sala, usuario)
 
 seguirAnulando = true;
+rut = validarRut();
+[usuario, idUsuario] = buscarUsuarioPorRut(rut, usuario);
 
-while true
-
-    if seguirAnulando == false
-        continuando = true;
-        break
-    end
-
-    fprintf(['<strong>|   MENÚ ANULAR RESERVA   |</strong>\n' ...
-    '¿Cómo desea buscar sus reservas a anular? ' ...
-    'Elija el número de la sala:\n' ...
-    '1. Mediante RUT\n' ...
-    '2. Mediante NOMBRE Y/O APELLIDO\n' ...
-    '3. Mediante NÚMERO DE RESERVA\n' ...
-    'Otras OPCIONES:\n' ...
-    '4. Volver al MENÚ PRINCIPAL.\n' ...
-    '5. Salir del programa.\n\n']);
-
-    opcion = input('\nIngrese la opción que desea realizar:\n', 's');
-    switch opcion
-        case '1'
-            rut = validarRut();
-            [usuario, idUsuario] = buscarUsuarioPorRut(rut);
-            %numSala, numFila, numColumna = extraerDatosUsuario(usuario, idUsuario);
-            imprimirDatosUsuario(usuario, idUsuario, sala);
-            
-            %[usuario, idUsuario] = buscarUsuario(usuario);
-            % imprimirDatosUsuario(usuario,sala)
-        case '2'
-            % buscarPorNombreApellido()
-        case '3'
-            % buscarPorNumeroReserva()
-        case '4'
+if idUsuario ~= 0
+    while true
+    
+        if seguirAnulando == false
             continuando = true;
-            return
-        case '5'
-            continuando = false;
-            return
-        otherwise
-            input('Opción no válida. Enter para volver a intentarlo.');
+            break
+        end
+        
+        %% PENDIENTE: PENSAR BIEN QUÉ HACER UNA VEZ QUE TENGO EL IDUSUARIO!
+        %---- primero llamaria una funcion que simplemente imprima la
+        %informacion del usuario y le pregunta qué reserva desea anular
+        [usuario, sala, conReserva] = imprimirDatosUsuario(usuario, idUsuario, sala);
+        
+        if conReserva
+            fprintf('¿Desea anular otra reserva?\n (S/N)');
+            seguirAnulando = funcionSeguir();
+        else
+            fprintf('No tiene reservas realizadas. ¿Desea intentarlo con otro rut? (S/N)\n');
+            seguirIntentando = funcionSeguir();
+            if seguirIntentando
+                rut = validarRut();
+                [usuario, idUsuario] = buscarUsuarioPorRut(rut, usuario);
+            else
+                input('\nDe acuerdo. Será redirigida/o al menú principal. ENTER para continuar.')
+                seguirAnulando = false;
+            end
+
+        end
+    
+        
     end
+else
+    input('No hay reserva a nombre de este RUT. Será retornado al menú principal.')
+    continuando = true;
 end

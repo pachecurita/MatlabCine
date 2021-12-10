@@ -17,7 +17,7 @@ while i <= length(usuario)
         [nombre, apellido] = validarNombres();
         usuario(idUsuario).nombre = nombre;
         usuario(idUsuario).apellido = apellido;
-        usuario(idUsuario).reserva = [];
+        %usuario(idUsuario).reserva = [];
     end
     if strcmp(usuario(i).rut,rut)
         idUsuario = i;
@@ -35,5 +35,5 @@ if seEncuentra == 0
     usuario(idUsuario).nombre = nombre;
     usuario(idUsuario).apellido = apellido;
     fprintf('%s, ha sido registrad@ con éxito.\n', usuario(idUsuario).nombre);
-    usuario(idUsuario).reserva = [];
+    %usuario(idUsuario).reserva = [];
 end
