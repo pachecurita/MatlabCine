@@ -1,7 +1,10 @@
 function valor = validarFilaColumna(maximo)
-% Valida el numero ingresado para una fila o columna.
-% Recibe un parámetro "maximo" indicando el máximo valor que puede ingresar
-% el ususario.
+% Valida el numero ingresado para una fila, columna u otro dato que se
+% desee validar con el mismo criterio.Recibe un parámetro "maximo" que
+% indica la cantidad máxima de asientos o columnas que puede ingresar el
+% usuario. Por ejemplo, si el número máximo de filas que deseo que el
+% usuario ingrese es de 25, entonces llamaré a la función así:
+% numeroFila = validarFilaColumna(25)
 
 valor = input('','s');
 

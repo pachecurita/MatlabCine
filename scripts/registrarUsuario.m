@@ -1,9 +1,8 @@
-function [usuario, idUsuario] = buscarUsuario(usuario)
-% Busca al usuario por rut en la estructura usuario, pero si no
-% lo encuenta entonces va a agregarlo con un nuevo numero de ID y va a
-% terminar retornando ese numero de ID.
-
-% LE PODRÍA CAMBIAR EL NOMBRE QUIZÁS A "REGISTRAR USUARIO"
+function [usuario, idUsuario] = registrarUsuario(usuario)
+% Busca al usuario por rut en la estructura usuario y si no lo encuentra su
+% función principal es registrarlo con un nuevo numero de ID para retornar
+% ese mismo número. Recibe la estructura usuario y retorna esa misma
+% estructura junto a su id.
 
 rut = validarRut();
 seEncuentra = false;
@@ -35,5 +34,4 @@ if seEncuentra == 0
     usuario(idUsuario).nombre = nombre;
     usuario(idUsuario).apellido = apellido;
     fprintf('%s, ha sido registrad@ con éxito.\n', usuario(idUsuario).nombre);
-    %usuario(idUsuario).reserva = [];
 end

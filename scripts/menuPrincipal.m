@@ -1,9 +1,9 @@
 function [sala, usuario] = menuPrincipal(sala,usuario)
-% Muestra el menú principal al usuario, espera una acción y la realiza.
-% Tiene como parámetros:
-%    usuario -> struct() -> Guarda la información de los usuarios.
-%    sala -> struct() -> Guarda la información de c/u de las salas.
-% Retorna la información en variables de las salas y usuarios.
+% Muestra el menú principal al usuario, solicita la opción al usuario para
+% finalmente llamar a las funciones que realizan la opción escogida.
+% Tiene como parámetros una estructura "sala" y una "usuario. Retorna esas
+% mismas estructuras, pero actualizadas.
+
 continuando = true;
 while true
     if ~ continuando
@@ -25,13 +25,14 @@ while true
     
 
     opcion = input('\nIngrese el numero de la opción que desea realizar:\n', 's');
+    clc;
     switch opcion
         case '1'
             [continuando, sala, usuario] = reservar(sala,usuario);
         case '2'
             [continuando, sala] = verReservas(sala);
         case '3'
-            %[continuando, sala, usuario] = modificarReservas(sala,usuario);
+            [continuando, sala, usuario] = modificarReserva(sala,usuario);
         case '4'
             [continuando, sala, usuario] = anularReserva(sala,usuario);
         case '5'

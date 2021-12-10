@@ -1,5 +1,5 @@
 function imprimirSala(sala, numSala)
-% Imprime los asientos disponibles en la sala especificada.
+% Función que imprime los asientos disponibles en la sala especificada.
 
 fprintf(['\n       <strong>--------------------------------' ...
          '| PANTALLA DEL CINE - SALA %d| ' ...

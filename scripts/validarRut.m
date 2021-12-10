@@ -7,7 +7,6 @@ function rut = validarRut()
 % Retorna el rut validado del usuario.
 
 cero = '0';
-
 continuar = true;
 while continuar
     rutConDigito = upper(input('Ingrese su rut sin puntos ni guión: ', 's'));

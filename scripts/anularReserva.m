@@ -15,11 +15,12 @@ if idUsuario ~= 0
         %% PENDIENTE: PENSAR BIEN QUÉ HACER UNA VEZ QUE TENGO EL IDUSUARIO!
         %---- primero llamaria una funcion que simplemente imprima la
         %informacion del usuario y le pregunta qué reserva desea anular
-        [usuario, sala, conReserva] = imprimirDatosUsuario(usuario, idUsuario, sala);
+        [usuario, sala, conReserva] = imprimirDatosUsuario(usuario, idUsuario, sala, 'anular');
         
         if conReserva
-            fprintf('¿Desea anular otra reserva?\n (S/N)');
+            fprintf('¿Desea anular otra reserva? (S/N)\n');
             seguirAnulando = funcionSeguir();
+            clc;
         else
             fprintf('No tiene reservas realizadas. ¿Desea intentarlo con otro rut? (S/N)\n');
             seguirIntentando = funcionSeguir();

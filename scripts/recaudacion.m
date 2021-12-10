@@ -1,4 +1,8 @@
 function [continuando, sala] = recaudacion(sala)
+% Función que imprime la recaudación acumulada en cada una de las salas 
+% junto a la recaudación total. Recibe la estructura "sala" y retorna la
+% misma estructura y una variable "continuando" que indica si el usuario
+% desea seguir en el programa o no.
 
 fprintf(['<strong>|   RECAUDACIÓN TOTAL   |</strong>\n'])
 
@@ -16,6 +20,8 @@ op = input(['Presione ENTER para volver al menú principal ' ...
 
 if op == '0'
     continuando = false;
+    clc;
 else
     continuando = true;
+    clc;
 end

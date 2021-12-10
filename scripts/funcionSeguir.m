@@ -1,4 +1,9 @@
 function seguir = funcionSeguir()
+% Función que se encarga de preguntar al usuario si desea seguir realizando
+% una acción. Por ejemplo, si desea seguir reservando:
+% seguirReservando = funcionSeguir()
+% No recibe parámetros. Retorna un valor booleano: true para seguir, y
+% false para no seguir.
 
 while true
     op = upper(input('','s'));

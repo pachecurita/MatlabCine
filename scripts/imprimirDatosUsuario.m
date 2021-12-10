@@ -1,4 +1,10 @@
-function [usuario, sala, conReserva] = imprimirDatosUsuario(usuario, idUsuario, sala) %sala
+function [usuario, sala, conReserva] = imprimirDatosUsuario(usuario, idUsuario, ...
+                                                            sala, tipo)
+% Función que imprime los datos de una reserva del usuario para luego
+% preguntar sobre la resera que desea anular o modificar.
+% Recibe las estructuras "usuario" y "sala", junto a el idUsuario, que
+% identifica el usuario que está realizando la acción y el "tipo", que
+% indica si se trata de una reserva o una modificación de asientos.
 
 
 if length(usuario(idUsuario).salas) >= 1
@@ -7,10 +13,32 @@ if length(usuario(idUsuario).salas) >= 1
         fprintf('%d. Número sala: %d |', i, usuario(idUsuario).salas(i));
         fprintf(' Fila: %d |', usuario(idUsuario).filas(i));
         fprintf(' Columna: %d\n', usuario(idUsuario).columnas(i));
+        cantSalas = i;
     end
     
-    op = input('Escoja la reserva que desea anular:\n');
-    
+
+    switch tipo
+        case 'anular'
+            while true
+                op = input('Escoja la reserva que desea anular:\n');
+                clc;
+                if op <= 0 || op >cantSalas
+                    fprintf('Reserva inválida.\n')
+                else
+                    break
+                end
+            end
+        case 'modificar'
+            while true
+                op = input('Escoja la reserva que desea modificar:\n');
+                clc;
+                if op <= 0 || op >cantSalas
+                    fprintf('Reserva inválida.\n')
+                else
+                    break
+                end
+            end
+    end
     
     for i=1:length(usuario(idUsuario).salas)
         if op == i
@@ -24,14 +52,9 @@ if length(usuario(idUsuario).salas) >= 1
             break
         end
     end
-    [sala, usuario] = reservarPorFilaColumna(sala, numSala, numFila, numColumna, usuario, idUsuario, 'anular');
+    [sala, usuario] = reservarPorFilaColumna(sala, numSala, numFila, numColumna, ...
+                                             usuario, idUsuario, 'anular');
     conReserva = true;
 else
-    
     conReserva = false;
 end
-
-
-
-
-%AQUI LLAMAR A LA FUNCION RESERVASPORFILACOLUMNA

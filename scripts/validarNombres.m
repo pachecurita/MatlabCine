@@ -1,4 +1,7 @@
 function [nombre,apellido] = validarNombres()
+% Función que revisa si un nombre o apellido es válido.
+% Para que sea válido no debe contener números en él.
+% Por ejemplo: "Juan123" es un nombre inválido. En cambio, "Juan" es válido.
 
 continuar = true;
 while continuar
