@@ -12,7 +12,8 @@ while i <= length(usuario)
     if strcmp(usuario(i).rut,'')==1 && i == 1
         idUsuario = i;
         usuario(idUsuario).rut = rut;
-        fprintf('Al parecer es un usuario nuevo, así que le pediremos sus datos antes de continuar.\n');
+        fprintf(['Al parecer es un usuario nuevo, así que le pediremos sus ' ...
+                 'datos antes de continuar.\n']);
         [nombre, apellido] = validarNombres();
         usuario(idUsuario).nombre = nombre;
         usuario(idUsuario).apellido = apellido;
@@ -29,7 +30,8 @@ end
 if seEncuentra == 0
     idUsuario = i;
     usuario(idUsuario).rut = rut;
-    fprintf('Al parecer es un usuario nuevo, así que le pediremos sus datos antes de continuar.\n');
+    fprintf(['Al parecer es un usuario nuevo, así que le pediremos sus datos ' ...
+             'antes de continuar.\n']);
     [nombre, apellido] = validarNombres();
     usuario(idUsuario).nombre = nombre;
     usuario(idUsuario).apellido = apellido;

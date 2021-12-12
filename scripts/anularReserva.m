@@ -1,4 +1,8 @@
 function [continuando, sala, usuario] = anularReserva(sala, usuario)
+% Función que se encarga de anular una reservación. Funciona mediante el
+% rut del usuario. Recibe una estructura "sala" y "usuario" en las que
+% buscará y modificará los datos. Retornará esas mismas estructuras
+% actualizadas.
 
 seguirAnulando = true;
 rut = validarRut();
@@ -11,10 +15,7 @@ if idUsuario ~= 0
             continuando = true;
             break
         end
-        
-        %% PENDIENTE: PENSAR BIEN QUÉ HACER UNA VEZ QUE TENGO EL IDUSUARIO!
-        %---- primero llamaria una funcion que simplemente imprima la
-        %informacion del usuario y le pregunta qué reserva desea anular
+
         [usuario, sala, conReserva] = imprimirDatosUsuario(usuario, idUsuario, sala, 'anular');
         
         if conReserva
@@ -31,10 +32,8 @@ if idUsuario ~= 0
                 input('\nDe acuerdo. Será redirigida/o al menú principal. ENTER para continuar.')
                 seguirAnulando = false;
             end
-
         end
-    
-        
+
     end
 else
     input('No hay reserva a nombre de este RUT. Será retornado al menú principal.')
